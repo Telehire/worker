@@ -1,0 +1,78 @@
+{
+  "costTypeList": [
+    {
+      "id": 1,
+      "count": 5,
+      "value": "差旅费"
+    },
+    {
+      "id": 2,
+      "count": 5,
+      "value": "住宿费"
+    },
+    {
+      "id": 3,
+      "count": 5,
+      "value": "交通费"
+    },
+    {
+      "id": 4,
+      "count": 5,
+      "value": "办公用具费"
+    },
+    {
+      "id": 5,
+      "count": 5,
+      "value": "招待费"
+    },
+    {
+      "id": 6,
+      "count": 5,
+      "value": "团建费"
+    },
+    {
+      "id": 7,
+      "count": 5,
+      "value": "通讯费"
+    },
+    {
+      "id": 8,
+      "count": 5,
+      "value": "其他"
+    }
+  ],
+  "costStatusList": [
+    {
+      "id": 1,
+      "count": 5,
+      "value": "草稿"
+    },
+    {
+      "id": 2,
+      "count": 5,
+      "value": "待审批"
+    },
+    {
+      "id": 3,
+      "count": 5,
+      "value": "已审批"
+    },
+    {
+      "id": 4,
+      "count": 5,
+      "value": "待支付"
+    },
+    {
+      "id": 5,
+      "count": 5,
+      "value": "已拒绝"
+    },
+    {
+      "id": 6,
+      "count": 5,
+      "value": "已支付"
+    }
+  ]
+}
+
+

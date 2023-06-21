@@ -1,0 +1,80 @@
+{
+  "data": [
+    {
+      "currencyType": "$",
+      "currencyTypeName": "美元",
+      "currencyTypeNameEn": "USD",
+      "price": "1000.00",
+      "billList": [
+        {
+          "id": 1,
+          "name": "王学兵",
+          "jobTitle": "后端开发工程师",
+          "billType": "押金",
+          "billPrice": "199.00",
+          "billCurrency": "$",
+          "billStatus": "overTime",
+          "personImgUrl": ""
+        },
+        {
+          "id": 2,
+          "name": "王学兵",
+          "jobTitle": "后端开发工程师",
+          "billType": "押金",
+          "billPrice": "199.00",
+          "billCurrency": "$",
+          "billStatus": "overTime",
+          "personImgUrl": ""
+        },
+        {
+          "id": 3,
+          "name": "王学兵",
+          "jobTitle": "后端开发工程师",
+          "billType": "押金",
+          "billPrice": "199.00",
+          "billCurrency": "$",
+          "billStatus": "overTime",
+          "personImgUrl": ""
+        }
+      ]
+    },
+    {
+      "currencyType": "HK$",
+      "currencyTypeName": "港元",
+      "currencyTypeNameEn": "HKD",
+      "price": "1000.00",
+      "billList": [
+        {
+          "id": 4,
+          "name": "王学兵",
+          "jobTitle": "后端开发工程师",
+          "billType": "押金",
+          "billPrice": "199.00",
+          "billCurrency": "HK$",
+          "billStatus": "overTime",
+          "personImgUrl": ""
+        },
+        {
+          "id": 5,
+          "name": "王学兵",
+          "jobTitle": "后端开发工程师",
+          "billType": "押金",
+          "billPrice": "199.00",
+          "billCurrency": "HK$",
+          "billStatus": "overTime",
+          "personImgUrl": ""
+        },
+        {
+          "id": 6,
+          "name": "王学兵",
+          "jobTitle": "后端开发工程师",
+          "billType": "押金",
+          "billPrice": "199.00",
+          "billCurrency": "HK$",
+          "billStatus": "overTime",
+          "personImgUrl": ""
+        }
+      ]
+    }
+  ]
+}
