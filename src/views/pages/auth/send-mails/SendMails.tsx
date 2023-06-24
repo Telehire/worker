@@ -92,10 +92,11 @@ interface IProsp{
   handleBack?: any
   reSend?: any
   currentEmail?: string
+  openVCodeDialog?: () => void
 }
 
 const SendMails = (props: IProsp) => {
-  const {isRegister, handleBack, reSend, currentEmail} = props
+  const {isRegister, handleBack, reSend, currentEmail, openVCodeDialog} = props
   const { t } = useTranslation()
 
   // ** Hooks
@@ -220,6 +221,7 @@ const SendMails = (props: IProsp) => {
               <Typography variant='subtitle1' sx={{ mb: 2 }}>
                 {`${t('Register.Email_send_tip1')}${currentEmail}${t('Register.Email_send_tip2')}`}
               </Typography>
+              {openVCodeDialog ? <Button onClick={openVCodeDialog}>输入邮箱验证码</Button> : null}
             </Box>
 
             <Card>

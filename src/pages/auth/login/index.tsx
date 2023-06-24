@@ -63,6 +63,7 @@ import {hexToRGBA} from "@/@core/utils/hex-to-rgba";
 import Cleave from "cleave.js/react";
 import 'cleave.js/dist/addons/cleave-phone.us'
 import {POST_EMAIL_CODE} from "@/apis";
+import {Hidden} from "@mui/material";
 
 // ** Styled Components
 const LoginIllustration = styled('img')(({ theme }) => ({
@@ -139,7 +140,7 @@ const MuiTelInputStyled = styled(MuiTelInput)(({ theme }) => ({
   backgroundColor: common.white
 }))
 
-const CleaveInput = styled(Cleave)(({ theme }) => ({
+export const CleaveInput = styled(Cleave)(({ theme }) => ({
   maxWidth: 50,
   textAlign: 'center',
   height: '50px !important',
@@ -359,7 +360,10 @@ const LoginPage = () => {
           // CaptchaAppId：登录验证码控制台，从【验证管理】页面进行查看。如果未创建过验证，请先新建验证。注意：不可使用客户端类型为小程序的CaptchaAppId，会导致数据统计错误。
           //callback：定义的回调函数
           const {TencentCaptcha} = window as any
-          if(TencentCaptcha) {
+          if (process.env.NODE_ENV !== 'production') {
+            // FIXME: 开发环境跳过人机验证直接 callback
+            callback({ ret: 0 })
+          } else if(TencentCaptcha) {
             const captcha = new TencentCaptcha('194503754', callback, {});
 
             // 调用方法，显示验证码
@@ -443,21 +447,67 @@ const LoginPage = () => {
         paddingTop: theme.spacing(40),
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       }}
     >
       <Head>
         <script src="/js/TCaptcha.js" async />
       </Head>
       {!hidden ? (
-        <Grid item xl={4} lg={5} md={4}>
-          <Box>
-            <LoginIllustration
-              alt='login-illustration'
-              src={`/images/login/${imageSource}-${theme.palette.mode}.png`}
-            />
-          </Box>
-        </Grid>
+        <Box
+          sx={theme => ({
+            marginLeft: '4rem',
+            [theme.breakpoints.up('md')]: { width: '40%' },
+            [theme.breakpoints.down('md')]: { width: '100%' }
+          })}
+        >
+          <Box
+            sx={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              background: '#1d157a',
+              zIndex: -1,
+            }}
+          />
+            <Typography
+              sx={theme => ({
+                color: '#fff',
+                fontWeight: 700,
+                lineHeight: '120%',
+                [theme.breakpoints.up('md')]: { fontSize: i18n.language === 'en' ? 50 : 64 },
+                [theme.breakpoints.down('md')]: { fontSize: 36 },
+                [theme.breakpoints.down('sm')]: { fontSize: 26 }
+              })}
+            >
+              {i18n.language === 'en' ? t('Banner Global') : null}
+              {i18n.language === 'en' ? <br /> : null}
+              {t('HR Solutions for')}
+              <Hidden smUp>{i18n.language !== 'en' ? '，' : null}</Hidden>
+              <Hidden smDown>
+                <br />
+              </Hidden>
+              {t('Distributed Teams')}
+            </Typography>
+
+          <Typography
+            sx={theme => ({
+                             color: '#fff',
+                             lineHeight: '160%',
+                             ontSize: 16,
+                             fontWeight: 400,
+                             mt: 6,
+                             mb: 8,
+                             width: '100%'
+                             })}
+          >
+            {t(
+                'We will handle your worldwide compliance, payroll, and HR in 150+ countries, so you can fast-track global expansion.'
+            )}
+          </Typography>
+        </Box>
       ) : null}
 
       <Box
@@ -480,9 +530,9 @@ const LoginPage = () => {
               color: {
                 xs: theme.palette.primary.main,
                 sm: theme.palette.primary.main,
-                lg: theme.palette.primary.main,
-                md: theme.palette.primary.main,
-                xl: theme.palette.primary.main
+                md: common.white,
+                lg: common.white,
+                xl: common.white
               }
             }
           }}
@@ -517,7 +567,7 @@ const LoginPage = () => {
         }
       </Box>
 
-      <Grid xl={4} lg={5} md={6} sm={10} xs={11} sx={{ display: 'flex', justifyContent: 'center', pl: 16 }}>
+      <Grid xl={4} lg={5} md={6} sm={10} xs={11} sx={{ display: 'flex', justifyContent: 'center', pl: 16, marginTop: '4rem' }}>
         <Card>
           <CardContent sx={{ px: 6, py: 10 }}>
             <Box sx={{ mb: 6 }}>

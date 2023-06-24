@@ -25,10 +25,10 @@ const RegisterIllustration = styled('div')(({ theme }) => ({
 }))
 
 const RegisterIllustrationImg = styled('img')(({ theme }) => ({
-  width: '100%',
-  transform: 'scale(1.2)',
-  marginLeft: '30px',
-  marginBottom: 250
+  width: 'calc(100% + 48px)',
+  marginBottom: 250,
+  // 274 = 250 + 父元素 padding 24，贴到底边
+  transform: 'translate(-24px, 274px)'
 }))
 
 const TypographyStyled2 = styled(Typography)<TypographyProps>(({ theme }) => ({

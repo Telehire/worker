@@ -111,7 +111,7 @@ const SuccessPage = () => {
   }
 
   return (
-    <Grid container md={12} sm={12} sx={{height: '100%', backgroundColor: '#443699',display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+    <Grid container md={12} sm={12} sx={{height: '100%', minHeight: '100vh', backgroundColor: '#443699',display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
       <Grid item xs={12} sx={{py: 7, px: 6 ,width: '100%' }}>
         <svg width={197} height={48} viewBox='0 0 197 48' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <g clipPath='url(#clip0_1060_15058)'>
@@ -177,7 +177,7 @@ const SuccessPage = () => {
             mb: 3
           }}
         >
-          {`Hello, ${name}`}
+          {['Hello', name].filter(Boolean).join(', ')}
         </Typography>
         <Typography
           sx={{
@@ -187,7 +187,7 @@ const SuccessPage = () => {
             mb: 4.5
           }}
         >
-          {t('您已成功注册 TeleHire特聘 的企业账号')}
+          {t('您已成功注册 TeleHire特聘')}
         </Typography>
         <Typography
           sx={{
@@ -195,11 +195,11 @@ const SuccessPage = () => {
             fontSize: 14,
             fontWeight: 400,
             mb: 11,
-            width: 410,
+            width: 430,
             textAlign: 'center'
           }}
         >
-          {t('开始登录TeleHire平台，邀请团队经理；创建员工合同；签署承包商协议；管理您企业的工资账单和承包商账单。')}
+          {t('开始登录TeleHire签署您的劳动合同，之后可以查看你的工资和休假')}
         </Typography>
         <Button variant="contained" sx={{width: 430, py: 3, borderRadius: 1, mb: 6}} onClick={toLogin}>{t('进入登录')}</Button>
         <Typography
@@ -207,7 +207,7 @@ const SuccessPage = () => {
             color: '#FFFFFF80',
             fontSize: 14,
             fontWeight: 400,
-            width: 410,
+            width: 430,
             textAlign: 'center',
             mb: 55
           }}

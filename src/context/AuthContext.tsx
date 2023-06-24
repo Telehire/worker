@@ -17,6 +17,7 @@ import { getUserData } from '@/services/user'
 import jwt from 'jsonwebtoken'
 import { users } from 'src/@fake-db/auth/jwt'
 import { UserData } from '@/types/biz/user'
+import configs from "@/restful-api/constants";
 
 // ** Defaults
 const defaultProvider: AuthValuesType = {

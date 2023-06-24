@@ -28,7 +28,7 @@ const devProxy = {
     onError: (err, req, res) => {
       console.log('[DEBUG]Error: ', err)
     },
-    target: 'https://api.telehire.net/',
+    target: 'https://telehire.cn/',
     changeOrigin: true
   }
 }
